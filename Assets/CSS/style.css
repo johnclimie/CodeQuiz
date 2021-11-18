@@ -30,6 +30,9 @@ button {
     color: white;
     font-weight: bold;
     font-size: 20px;
+    height: 100px;
+    width: 40%;
+    margin: 3%;
 }
 
 button:hover{
@@ -46,6 +49,13 @@ button:hover{
     margin: 200px;
     font-size: 30px;
     font-weight: bold;
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
 }
 
 #choice1, #choice2, #choice3, #choice4 {
