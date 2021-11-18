@@ -12,8 +12,46 @@ header {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+header a:hover {
+    color: blue;
+}
+
+button {
+    background-color: darkblue;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+button:hover{
+    background-color: blue;
+    cursor:pointer;
 }
 
 #start {
-    
+    height: 100px;
+    width: 40%;
+}
+
+#text {
+    margin: 200px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#choice1, #choice2, #choice3, #choice4 {
+    visibility: hidden;
+}
+
+#highscores {
+    visibility: hidden;
 }
