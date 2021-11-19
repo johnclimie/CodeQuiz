@@ -3,11 +3,13 @@ var text = document.getElementById("text");
 var timer = document.getElementById("time");
 var quiz= document.getElementById("quiz");
 var highScores = document.getElementById("highscores");
+var viewHS = document.getElementById("viewHS");
 var buttons = document.getElementById("buttons");
 var choice1 = document.getElementById("choice1");
 var choice2 = document.getElementById("choice2");
 var choice3 = document.getElementById("choice3");
 var choice4 = document.getElementById("choice4");
+var back = document.getElementById("goback");
 var secondsLeft = 50;
 
 
@@ -19,13 +21,15 @@ function setTime() {
         if(secondsLeft === 0) {
             console.log("test");
             clearInterval(timerInterval);
-
+            viewHighscores();
         }
+
     }, 1000);
 }
 
 function start() {
-    startButton.style.visibility = "hidden";
+    startButton.style.display = "none";
+    viewHS.style.visibility = "hidden";
     questionOne();
     setTime();
 };
@@ -102,10 +106,18 @@ function highscoreTransition() {
     viewHighscores();
 }
 
+function addScore() {
+
+}
+
 function viewHighscores() {
     quiz.style.display = "none";
     buttons.style.display = "none";
     highScores.style.visibility = "visible";
+}
+
+function refresh() {
+    location.reload();
 }
 
 
@@ -113,3 +125,5 @@ function viewHighscores() {
 
 
 startButton.addEventListener("click", start);
+viewHS.addEventListener("click", viewHighscores);
+back.addEventListener("click", refresh);
