@@ -1,21 +1,38 @@
 var startButton = document.getElementById("start");
 var text = document.getElementById("text");
+var timer = document.getElementById("time");
+var quiz= document.getElementById("quiz");
+var highScores = document.getElementById("highscores");
+var buttons = document.getElementById("buttons");
 var choice1 = document.getElementById("choice1");
 var choice2 = document.getElementById("choice2");
 var choice3 = document.getElementById("choice3");
 var choice4 = document.getElementById("choice4");
+var secondsLeft = 50;
+
+
+function setTime() {
+    var timerInterval = setInterval(() => {
+        secondsLeft--;
+        timer.textContent = "Time: " + secondsLeft;
+
+        if(secondsLeft === 0) {
+            console.log("test");
+            clearInterval(timerInterval);
+
+        }
+    }, 1000);
+}
 
 function start() {
     startButton.style.visibility = "hidden";
     questionOne();
+    setTime();
 };
 
 function questionOne() {
     text.textContent = "test";
-    choice1.style.visibility = "visible";
-    choice2.style.visibility = "visible";
-    choice3.style.visibility = "visible";
-    choice4.style.visibility = "visible";
+    buttons.style.visibility = "visible";
 
     choice1.textContent = "test1"; 
     choice2.textContent = "test1";
@@ -74,10 +91,21 @@ function questionFive() {
     choice3.textContent = "test5";
     choice4.textContent = "test5";
 
-    // choice1.addEventListener("click", questionFive);
-    // choice2.addEventListener("click", questionFive);
-    // choice3.addEventListener("click", questionFive);
-    // choice4.addEventListener("click", questionFive);
+    choice1.addEventListener("click", highscoreTransition);
+    choice2.addEventListener("click", highscoreTransition);
+    choice3.addEventListener("click", highscoreTransition);
+    choice4.addEventListener("click", highscoreTransition);
+    
+}
+
+function highscoreTransition() {
+    viewHighscores();
+}
+
+function viewHighscores() {
+    quiz.style.display = "none";
+    buttons.style.display = "none";
+    highScores.style.visibility = "visible";
 }
 
 
