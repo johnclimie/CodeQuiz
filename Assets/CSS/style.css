@@ -99,3 +99,10 @@ button:hover{
 #enterScore button {
     width: 20%;
 }
+
+@media (max-width: 600px) {
+    #text {
+        /* font-size: 15px; */
+        margin: 0;
+    }
+}
